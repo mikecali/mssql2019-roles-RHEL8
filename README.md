@@ -45,18 +45,27 @@ Note that this repo contains 2 roles:
            
           $ sqlcmd -S localhost -U SA -P 'P@ssWORD!'
            
-          >> SELECT @@version
-          >> GO
+          1> SELECT @@version
+          2> GO
+ 
+          -------------------------------------------------------------------------------------------------------------------------------------------------------- 
+         Microsoft SQL Server 2019 (RTM-CU8) (KB4577194) - 15.0.4073.23 (X64) 
+	   Sep 23 2020 16:03:08 
+	   Copyright (C) 2019 Microsoft Corporation
+	   Enterprise Evaluation Edition (64-bit) on Linux (Red Hat Enterprise Linux 8.2 (Ootpa)) <X64>                                                                        
+
+        (1 rows affected)
+
 
 5. Verify or list the DB created by the playbook
             
-          >> EXEC sp_databases
-          >> GO
+          1> EXEC sp_databases
+          2> GO
 
 # To delete the installation
 
 1. Run this playbook:
           
-          ansible-playbook site.yaml -e @vars.yaml -vvv
+          $ ansible-playbook site.yaml -e @vars.yaml -vvv
 
 2. Done
