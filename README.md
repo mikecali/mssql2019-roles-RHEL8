@@ -3,7 +3,7 @@
 This is a forked from https://github.com/kyleabenson/ansible-role-mssql
 I have added some improvements and here is the results.
 
-To Install and configure MSSQL either in RHEL 8 on CentOS 8 follow the steps below:
+# To Install and configure MSSQL either in RHEL 8 on CentOS 8 follow the steps below:
 
 1. Clone this repository
 2. Run the playbook: 
@@ -26,3 +26,10 @@ To Install and configure MSSQL either in RHEL 8 on CentOS 8 follow the steps bel
           >> EXEC sp_databases
           >> GO
 
+# To delete the installation
+
+1. Run this playbook:
+          
+          ansible-playbook site.yaml -e @vars.yaml -vvv
+
+2. Done
