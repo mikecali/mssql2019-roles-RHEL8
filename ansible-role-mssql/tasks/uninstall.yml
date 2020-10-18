@@ -1,0 +1,35 @@
+---
+
+- name: Stop any existing running SQL Server service
+  service:
+      name: mssql-server
+      state: stopped
+  ignore_errors: yes
+
+- name: Uninstall Microsoft SQL Server package
+  yum:
+    name: mssql-server
+    state: absent
+  register: uninstall
+  ignore_errors: yes
+
+
+- name: Uinstall SQL Server client tools
+  yum:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - mssql-tools
+    - unixODBC-devel
+  environment:
+    - ACCEPT_EULA: Y
+
+- name: Uinstall python and openssl
+  yum:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - python2
+    - compat-openssl10
+  when: (ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version'] == "8")
+

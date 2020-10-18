@@ -1,0 +1,21 @@
+---
+
+- name: Make sure python2 as pre-requisites are installed.
+  yum:
+      name: 
+        - python2
+        - compat-openssl10
+      state: present
+
+- name: Make python2 the default python interpreter
+  expect:
+      command: alternatives --config python
+      responses: 
+        'There are 3 programs which provide 'python'.'
+        'Selection    Command'
+        '-----------------------------------------------'
+        '*  1           /usr/libexec/no-python'
+        '   2           /usr/bin/python3'
+        ' + 3           /usr/bin/python2'
+
+      echo: 3 

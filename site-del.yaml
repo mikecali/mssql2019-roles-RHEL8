@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  name: Removes mssql-server
+  become: yes
+
+  tasks:
+  - name: Run remove tasks from mssql-server role
+    include_role:
+      name: ansible-role-mssql
+      tasks_from: uninstall
