@@ -1,4 +1,4 @@
-# MSSQL ROLE
+# MSSQL ROLE To Deploy MSSQL19 on RHEL 8/CentOS 8
 
 This is a forked from https://github.com/kyleabenson/ansible-role-mssql
 I have added some improvements and here is the results.
