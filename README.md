@@ -23,6 +23,10 @@ No special requirements; note that this role requires root access, so either run
           tasks_from: new_db
 
 This repository has ansible.cfg that I uploaded so you can simply run the playbook after cloning.
+Note that this repo contains 2 roles:
+          
+          pre-reqs
+          ansible-role-mssql
 
 # To Install and configure MSSQL either in RHEL 8 on CentOS 8 follow the steps below:
 
